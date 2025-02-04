@@ -3,7 +3,7 @@ const password = document.getElementById('password');
 const submit = document.getElementById('btn');
 const form = document.getElementById('form');
 const signupPage = document.getElementById('signupPage')
-const Storage_key = 'singup';
+const Storage_key = 'user';
 const key = 'todo'
 
 
@@ -48,7 +48,10 @@ form.addEventListener('submit', (e) => {
         window.location.href = './index.html'
     }
    else if (isLogin.password === userForm.password && isLogin.email === userForm.email) {
-        window.location.href = './todo.html'
+    alert('login success')
+        setTimeout(()=>{
+            window.location.href = './todo.html'
+        },100)
     } else {
         alert('wrong email and password')
     }
