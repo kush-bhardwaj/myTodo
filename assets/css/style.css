@@ -6,17 +6,17 @@
     font-family: dosis;
     src: url(../fonts/Dosis/Dosis-VariableFont_wght.ttf);
 }
+
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: dosis;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
-
 
 .registeration-main-section {
     width: 100%;
@@ -24,103 +24,114 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(180deg, rgb(86, 24, 172) 36%, rgb(217, 0, 255) 100%, rgb(124, 11, 189) 90%);
+    padding: 20px; /* Added padding for better spacing on smaller screens */
+    background: linear-gradient(180deg, rgb(86, 24, 172) 36%, rgb(217, 0, 255) 100%);
 }
 
 .registration-middle {
     width: 80%;
-    height: 600px;
+    max-width: 900px; /* Prevents stretching too wide */
+    height: auto;
     display: flex;
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-.Login-middle{
-    width: 80%;
-    height: 400px;
-    display: flex;
-}
+
+/* Left Section */
 .registration-left {
     width: 50%;
-    height: 100%;
+    padding: 30px;
     background-color: #f2f2f2;
 }
-.registration-left>form {
-    padding: 30px;
-    margin-top: 20px;
+
+.registration-left form {
+    width: 100%;
 }
-.registration-left>form>h3{
-    font-size: 30px;
+
+.registration-left form h3 {
+    font-size: 24px;
     font-weight: bold;
     letter-spacing: 1px;
+    margin-bottom: 10px;
 }
-.registration-left>form>hr{
-    width: 30px;
-    margin-top: 3px;
+
+.registration-left form hr {
+    width: 50px;
     height: 3px;
     background-color: rgb(217, 0, 255);
     border: none;
+    margin-bottom: 20px;
 }
-.registration-left>form>.input-div {
-    width: 80%;
-    margin: 20px 10px 20px 0px;
-    border-left: none;
-    border-right: none;
-    border-top: none;
+
+/* Input Fields */
+.input-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid #828181;
+    margin-bottom: 20px;
 }
-.registration-left>form>.input-div>.icons{
+
+.input-div .icons {
     color: #3d3d3d;
+    margin-right: 10px;
 }
+
 input {
-    width: 80%;
-    padding: 15px 5px 10px 0px;
-    font-weight: 500;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
     border: none;
     background-color: transparent;
     outline: none;
-    font-size: 13px;
-    color: #3d3d3d;
-    letter-spacing: 1px;
-    margin-left: 5px;
 }
 
 input::placeholder {
     text-transform: capitalize;
-    letter-spacing: 1px;
     font-weight: normal;
 }
 
-.registration-left>form>a{
+/* Buttons & Links */
+.registration-left form a {
     font-size: 13px;
     font-weight: bold;
-    display: block;
-    text-transform: capitalize;
-    margin-bottom: 10px;
     text-decoration: none;
-    letter-spacing: 1px;
     color: rgb(217, 0, 255);
-}
-.registration-left>form>button{
-    width: 80%;
     display: block;
+    margin-bottom: 10px;
+}
+
+.registration-left form button {
+    width: 100%;
     font-size: 15px;
-    letter-spacing: 1px;
-    padding: 10px;
-    color: #fff;
+    padding: 12px;
     font-weight: bold;
     cursor: pointer;
     background-color: rgb(217, 0, 255);
-    outline: none;
+    color: #fff;
     border: none;
-    margin-top: 30px;
-}
-.registration-left>form>.dont-have{
-    text-align: center;
-    width: 80%;
+    outline: none;
+    border-radius: 5px;
     margin-top: 20px;
-    font-size: 15px;
+    transition: 0.3s;
 }
-.registeration-right{
+
+.registration-left form button:hover {
+    background-color: rgb(180, 0, 220);
+}
+
+.registration-left form .dont-have {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Right Section */
+.registeration-right {
     width: 50%;
-    height: 100%;
     background: url('/images/bg.webp');
     background-position: center;
     background-repeat: no-repeat;
@@ -130,7 +141,8 @@ input::placeholder {
     align-items: center;
     color: #fff;
 }
-.registeration-right>div{
+
+.registeration-right div {
     width: 100%;
     height: 100%;
     background-color: rgba(92, 15, 199, 0.2);
@@ -138,10 +150,60 @@ input::placeholder {
     justify-content: center;
     align-items: center;
 }
-.registeration-right>div>p{
-    font-size:40px;
+
+.registeration-right div p {
+    font-size: 30px;
     text-transform: capitalize;
     font-weight: bold;
-    letter-spacing: 1px;
-    color: rgba(225,225,225, 0.7);
+    color: rgba(225, 225, 225, 0.7);
+    text-align: center;
+    padding: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .registration-middle {
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+    }
+
+    .registration-left, .registeration-right {
+        width: 100%;
+    }
+
+    .registeration-right {
+        height: 200px; /* Adjust height for smaller screens */
+    }
+
+    .registeration-right div p {
+        font-size: 24px; /* Reduce font size on mobile */
+    }
+
+    .registration-left form h3 {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .registeration-main-section {
+        padding: 10px;
+    }
+
+    .registeration-right {
+        height: 150px; /* Reduce height for extra small screens */
+    }
+
+    .registeration-right div p {
+        font-size: 20px;
+    }
+
+    .registration-left form h3 {
+        font-size: 20px;
+    }
+
+    .registration-left form button {
+        font-size: 14px;
+        padding: 10px;
+    }
 }

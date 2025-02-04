@@ -1,77 +1,157 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Fira+Code:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
-section{
+section {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(180deg, rgb(86, 24, 172) 36%, rgb(217, 0, 255) 100%, rgb(124, 11, 189) 90%);
-}
-.to-do-middle{
-    width: 40%;
-    display: flex;
-    background-color:#fff;
-    flex-direction: row;
-    flex-wrap: wrap;
     padding: 20px;
-    border-radius: 5px;
+    background: linear-gradient(180deg, rgb(86, 24, 172) 36%, rgb(217, 0, 255) 100%);
 }
-.to-do-middle>form{
+
+/* To-Do List Container */
+.to-do-middle {
+    width: 40%;
+    max-width: 500px; /* Prevents stretching too wide */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form */
+.to-do-middle form {
     width: 100%;
-    height: 50px;
+    display: flex;
 }
-.to-do-middle>form>input{
-    width: 70%;
-    padding: 10px;
-    border: .5px solid gray;
+
+.to-do-middle form input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid gray;
     outline-color: rgb(217, 0, 255);
-    border-radius: 2px;
+    border-radius: 4px;
     color: #3d3d3d;
+    font-size: 14px;
 }
-.to-do-middle>form>button{
-    width: 28%;
-    padding: 9px;
+
+.to-do-middle form button {
+    width: 30%;
+    padding: 12px;
     margin-left: 5px;
     font-weight: bold;
-    outline: none;
-    border: .5px solid gray;
+    border: none;
     cursor: pointer;
     background-color: rgb(217, 0, 255);
     color: #fff;
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: 1px;
+    border-radius: 4px;
+    transition: 0.3s;
 }
-.to-do-middle>#task{
-    width: 100%;
+
+.to-do-middle form button:hover {
+    background-color: rgb(180, 0, 220);
 }
-.to-do-middle>#task>p{
+
+/* Task List */
+.to-do-middle #task {
     width: 100%;
-   background-color: aliceblue;
-    margin-bottom: 5px;
-    padding: 5px;
+    margin-top: 15px;
+}
+
+/* Task Items */
+.to-do-middle #task p {
+    width: 100%;
+    background-color: aliceblue;
+    margin-bottom: 8px;
+    padding: 10px;
     font-size: 16px;
     display: flex;
-    text-transform: capitalize;
+    align-items: center;
     justify-content: space-between;
+    text-transform: capitalize;
     color: #212121;
+    border-radius: 4px;
+    transition: 0.3s;
 }
-.to-do-middle>#task>p>button{
+
+.to-do-middle #task p:hover {
+    background-color: #e0e7ff;
+}
+
+/* Delete Button */
+.to-do-middle #task p button {
     width: 70px;
-    padding: 5px;
+    padding: 6px;
     border: none;
     cursor: pointer;
-    background-color: rgba(86, 24, 172,0.7);
+    background-color: rgba(86, 24, 172, 0.7);
     color: #fff;
     outline: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.to-do-middle #task p button:hover {
+    background-color: rgba(86, 24, 172, 1);
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .to-do-middle {
+        width: 80%;
+        max-width: 400px;
+    }
+
+    .to-do-middle form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .to-do-middle form input {
+        width: 100%;
+    }
+
+    .to-do-middle form button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .to-do-middle {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .to-do-middle form {
+        gap: 8px;
+    }
+
+    .to-do-middle form button {
+        font-size: 13px;
+    }
+
+    .to-do-middle #task p {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .to-do-middle #task p button {
+        width: 60px;
+        font-size: 12px;
+    }
 }
