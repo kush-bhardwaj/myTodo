@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css"></link>
+
+
+</head>
+<body>
+    <section class="registeration-main-section">
+        <div class="registration-middle Login-middle"> <!-- middle -->
+           
+             <!-- left -->
+             <div class="registration-left">
+                <form id="form" autocomplete="off">
+                    <h3>Login</h3><hr>
+                    <div class="input-div">
+                        <i class="icons fa-solid fa-envelope"></i>
+                        <input id="email" name="email" type="email" placeholder="enter your email" name="email" required></input>
+                    </div>
+                    <div class="input-div">
+                        <i class="icons fa-solid fa-lock"></i>
+                        <input id="password" type="password" placeholder="enter your password" name="password" required></input>
+                    </div>
+                    <!-- <a href="#">forget password</a href="#"> -->
+                    <button type="submit" id="btn">Login</button>
+                    <div class="dont-have">
+                        <span style="color:#3d3d3d;letter-spacing: 1px;">Don't have an account?</span>
+                        <span style="color:rgb(217, 0, 255); font-weight: bold; letter-spacing: 1px;cursor: pointer;" id="signupPage">Signup now</span>
+                    </div>
+                </form>
+                 <!-- registration form -->
+             </div>
+             <div class="registeration-right">
+                <!-- right for bg -->
+              <div>
+                <p>nothing will work <br> unless you do</p>
+              </div>
+             </div>
+        </div>
+    </section>
+    <script async src="./assets/js/login.js"></script>
+</body>
+</html>

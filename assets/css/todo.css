@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Fira+Code:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(180deg, rgb(86, 24, 172) 36%, rgb(217, 0, 255) 100%, rgb(124, 11, 189) 90%);
+}
+.to-do-middle{
+    width: 40%;
+    display: flex;
+    background-color:#fff;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 5px;
+}
+.to-do-middle>form{
+    width: 100%;
+    height: 50px;
+}
+.to-do-middle>form>input{
+    width: 70%;
+    padding: 10px;
+    border: .5px solid gray;
+    outline-color: rgb(217, 0, 255);
+    border-radius: 2px;
+    color: #3d3d3d;
+}
+.to-do-middle>form>button{
+    width: 28%;
+    padding: 9px;
+    margin-left: 5px;
+    font-weight: bold;
+    outline: none;
+    border: .5px solid gray;
+    cursor: pointer;
+    background-color: rgb(217, 0, 255);
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.to-do-middle>.task{
+    padding: 10px;
+    background-color: rebeccapurple;
+    width: 100%;
+}
